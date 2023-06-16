@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Biodata</h1>
+    <table>
+      <tr>
+        <td>ID</td>
+        <td>:</td>
+        <td><%= data.id %></td>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td>:</td>
+        <td><%= data.username %></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>:</td>
+        <td><%= data.password %></td>
+      </tr>
+      <tr>
+        <td>Created At</td>
+        <td>:</td>
+        <td><%= data.createdAt %></td>
+      </tr>
+      <tr>
+        <td>Updated At</td>
+        <td>:</td>
+        <td><%= data.updatedAt %></td>
+      </tr>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Score</th>
+          <th>CreatedAt</th>
+          <th>UpdatedAt</th>
+        </tr>
+        <% for(var i=0; i < data.user_game_histories.length; i++) { %>
+        <tr>
+          <td><%= data.user_game_histories[i].id %></td>
+          <td><%= data.user_game_histories[i].score %></td>
+          <td><%= data.user_game_histories[i].updatedAt %></td>
+          <td><%= data.user_game_histories[i].deletedAt %></td>
+        </tr>
+        <% } %>
+
+      </thead>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fullname</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+        </tr>
+        <% for(var i=0; i < data.user_game_histories.length; i++) { %>
+        <tr>
+          <td><%= data.user_game_biodatas[i].id %></td>
+          <td><%= data.user_game_biodatas[i].fullname %></td>
+          <td><%= data.user_game_biodatas[i].birthday %></td>
+          <td><%= data.user_game_biodatas[i].gender %></td>
+          <td><%= data.user_game_biodatas[i].updatedAt %></td>
+          <td><%= data.user_game_biodatas[i].deletedAt %></td>
+        </tr>
+        <% } %>
+      </thead>
+    </table>
+
+  </body>
+</html>
